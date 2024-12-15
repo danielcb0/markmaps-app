@@ -11,22 +11,22 @@
       <h1>Índice</h1>
       <ul>
         <li>
-          <a href="./3-bdd/markmap (2).html" target="viewer"
+          <a href="./markmap (2).html" target="viewer"
             >Administración de Bases de Datos</a
           >
         </li>
         <li>
-          <a href="./3-bdd/markmap (3).html" target="viewer"
+          <a href="./markmap (3).html" target="viewer"
             >Recuperación y Restauración</a
           >
         </li>
         <li>
-          <a href="./3-bdd/markmap (4).html" target="viewer"
+          <a href="./markmap (4).html" target="viewer"
             >Protocolos de Compromiso</a
           >
         </li>
         <li>
-          <a href="./3-bdd/markmap (5).html" target="viewer"
+          <a href="./markmap (5).html" target="viewer"
             >Control de Concurrencia</a
           >
         </li>
@@ -36,8 +36,14 @@
       id="content"
       name="viewer"
       src=""
-      width="100%"
-      height="100%"
+      style="overflow: hidden; width: 100%; height: 100%"
     ></iframe>
+    <button id="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('hidden');
+      }
+    </script>
   </body>
 </html>

@@ -557,5 +557,24 @@
         { colorFreezeLevel: 2 }
       );
     </script>
+    <script>
+      (() => {
+        const { markmap: Markmap } = window;
+        const svg = document.querySelector('#mindmap');
+        const markmapInstance = Markmap.create(svg, null, {
+          content: 'Contenido de tu mindmap aquí',
+        });
+
+        // Añadir zoom y pan
+        const zoom = d3
+          .zoom()
+          .scaleExtent([0.5, 5]) // Limita el zoom (mínimo 0.5x y máximo 5x)
+          .on('zoom', (event) => {
+            svg.setAttribute('transform', event.transform);
+          });
+
+        d3.select(svg).call(zoom);
+      })();
+    </script>
   </body>
 </html>
