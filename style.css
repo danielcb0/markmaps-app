@@ -3,28 +3,27 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
-/* Estilo para el menú lateral */
+/* Menú lateral */
 #menu {
   width: 250px;
   background-color: #2c3e50;
   color: white;
   padding: 20px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   position: fixed;
   height: 100%;
+  left: 0;
+  top: 0;
   transition: transform 0.3s ease;
-  transform: translateX(0); /* Posición normal */
+  transform: translateX(0); /* Menú visible por defecto */
+  z-index: 1000;
 }
 
 #menu.hidden {
-  transform: translateX(-250px); /* Ocultar menú en móviles */
+  transform: translateX(-250px); /* Ocultar menú */
 }
 
 #menu h1 {
@@ -57,18 +56,8 @@ body {
   background-color: #34495e;
 }
 
-/* Estilo del iframe */
-#content {
-  flex: 1;
-  border: none;
-  margin-left: 250px; /* Desplazar el contenido para dejar espacio al menú */
-  width: calc(100% - 250px); /* Ajustar tamaño dinámico */
-  height: 100%;
-}
-
-/* Botón de menú para dispositivos pequeños */
+/* Botón para contraer/expandir menú */
 #menu-toggle {
-  display: none;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -79,26 +68,39 @@ body {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 1001;
+  transition: left 0.3s ease;
 }
 
-/* Estilos responsive */
+#menu.hidden + #menu-toggle {
+  left: 10px; /* Ajusta la posición del botón cuando el menú está oculto */
+}
+
+/* Contenido principal */
+#content {
+  flex: 1;
+  margin-left: 250px; /* Espacio para el menú */
+  height: 100%;
+  border: none;
+  transition: margin-left 0.3s ease;
+}
+
+#menu.hidden ~ #content {
+  margin-left: 0; /* Contenido ocupa todo el ancho al ocultar el menú */
+}
+
+/* Responsividad */
 @media screen and (max-width: 768px) {
   #menu {
-    position: absolute;
-    transform: translateX(-250px); /* Menú oculto por defecto */
+      transform: translateX(-250px); /* Ocultar menú por defecto en móviles */
   }
 
   #menu.hidden {
-    transform: translateX(0); /* Mostrar menú */
-  }
-
-  #menu-toggle {
-    display: block; /* Mostrar botón de menú */
+      transform: translateX(0); /* Mostrar menú */
   }
 
   #content {
-    margin-left: 0;
-    width: 100%; /* Usar todo el ancho en dispositivos pequeños */
+      margin-left: 0;
+      width: 100%;
   }
 }
