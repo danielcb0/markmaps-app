@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-beta.4/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.3-beta.4/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-beta.4/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:k,mm:N}=window,U=new k.Toolbar;U.attach(N);const D=U.render();D.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(D)})})()</script><script>((n,M,H,F)=>{const G=n();window.mm=G.Markmap.create("svg#mindmap",(M||G.deriveOptions)(F),H)})(()=>window.markmap,null,{"content":"1.1 Tecnología de las BD Relacionales","children":[{"content":"1.1 <strong>Cometidos del Procesador de Consultas</strong>:","children":[{"content":"","children":[{"content":"1. Elegir la mejor consulta entre todas las equivalentes.","children":[],"payload":{"lines":"8,9","listIndex":1}},{"content":"2. Complementar la estrategia de ejecución con operaciones de intercambio de datos.","children":[],"payload":{"lines":"9,10","listIndex":2}},{"content":"3. Escoger la mejor localidad para procesar datos.","children":[],"payload":{"lines":"10,12","listIndex":3}}],"payload":{"lines":"8,12"}},{"content":"El objetivo es transformar una consulta de alto nivel sobre una BDD en una estrategia de ejecución eficiente expresada en un lenguaje de bajo nivel sobre las bases de datos locales.","children":[],"payload":{"lines":"13,15"}}],"payload":{"lines":"6,7"}},{"content":"1.1 <strong>Medidas para el Consumo de Recursos</strong>:","children":[{"content":"1. \n<p data-lines=\"17,18\"><strong>Coste Total de Procesar una Consulta</strong>:</p>","children":[{"content":"Suma de los tiempos empleados para procesar operaciones de consulta en las diversas localidades.","children":[],"payload":{"lines":"18,19"}},{"content":"Incluye el tiempo de comunicación entre localidades.","children":[],"payload":{"lines":"19,21"}}],"payload":{"lines":"17,21","listIndex":1}},{"content":"2. \n<p data-lines=\"21,22\"><strong>Tiempo de Respuesta de la Consulta</strong>:</p>","children":[{"content":"Tiempo de ejecución de la consulta.","children":[],"payload":{"lines":"22,24"}}],"payload":{"lines":"21,24","listIndex":2}}],"payload":{"lines":"15,16"}}],"payload":{"lines":"1,2"}},{"colorFreezeLevel":2})</script>
+</body>
+</html>
